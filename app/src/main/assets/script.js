@@ -81,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initDynamicContactLinks();
   initStickyHeader();
   initMobileNavigation();
+  initBlogNavDropdown();
+  initBlogFilters();
   initStatsCounter();
   initCostCalculator();
   initPortfolioFilters();
@@ -133,7 +135,7 @@ function initStickyHeader() {
 function initMobileNavigation() {
   const menuToggle = document.querySelector(".mobile-menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navLinks = document.querySelectorAll(".nav-link:not(.nav-dropdown-trigger), .dropdown-link");
 
   if (!menuToggle || !navMenu) return;
 
@@ -143,13 +145,59 @@ function initMobileNavigation() {
     document.body.style.overflow = navMenu.classList.contains("open") ? "hidden" : "";
   });
 
-  // Close menu when a link is clicked
+  // Close menu when non-dropdown navigation links are clicked
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       menuToggle.classList.remove("open");
       navMenu.classList.remove("open");
       document.body.style.overflow = "";
+      const dropdownParent = document.querySelector(".nav-item-dropdown");
+      if (dropdownParent) {
+        dropdownParent.classList.remove("open");
+      }
     });
+  });
+}
+
+/* ----------------------------------------------------------------------------
+   3.5 BLOG NAVIGATION SUB-MENU DROPDOWN
+   ---------------------------------------------------------------------------- */
+function initBlogNavDropdown() {
+  const dropdownContainer = document.querySelector(".nav-item-dropdown");
+  const dropdownTrigger = document.getElementById("blogDropdownTrigger");
+  const dropdownLinks = document.querySelectorAll(".dropdown-link");
+
+  if (!dropdownContainer || !dropdownTrigger) return;
+
+  // Toggle on click (essential for mobile & touch devices)
+  dropdownTrigger.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      dropdownContainer.classList.toggle("open");
+      const isExpanded = dropdownContainer.classList.contains("open");
+      dropdownTrigger.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+    }
+  });
+
+  // Dropdown link clicks: filter sync + auto close + smooth scroll
+  dropdownLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const filterTarget = link.getAttribute("data-blog-filter-trigger");
+      if (filterTarget) {
+        setBlogCategoryFilter(filterTarget);
+      }
+
+      dropdownContainer.classList.remove("open");
+      dropdownTrigger.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Close dropdown when clicking outside on desktop
+  document.addEventListener("click", (e) => {
+    if (!dropdownContainer.contains(e.target)) {
+      dropdownContainer.classList.remove("open");
+      dropdownTrigger.setAttribute("aria-expanded", "false");
+    }
   });
 }
 
@@ -367,6 +415,49 @@ function initPortfolioFilters() {
 }
 
 /* ----------------------------------------------------------------------------
+   6.5 BLOG CATEGORY FILTERING
+   ---------------------------------------------------------------------------- */
+function setBlogCategoryFilter(category) {
+  const filterButtons = document.querySelectorAll(".blog-filter-btn");
+  const blogCards = document.querySelectorAll(".blog-card");
+
+  filterButtons.forEach(btn => {
+    if (btn.getAttribute("data-blog-filter") === category) {
+      btn.classList.add("active", "btn-gold");
+      btn.classList.remove("btn-secondary");
+    } else {
+      btn.classList.remove("active", "btn-gold");
+      btn.classList.add("btn-secondary");
+    }
+  });
+
+  blogCards.forEach(card => {
+    const cardCategory = card.getAttribute("data-category");
+    if (category === "all" || cardCategory === category) {
+      card.style.display = "flex";
+      setTimeout(() => {
+        card.style.opacity = "1";
+      }, 30);
+    } else {
+      card.style.display = "none";
+      card.style.opacity = "0";
+    }
+  });
+}
+
+function initBlogFilters() {
+  const filterButtons = document.querySelectorAll(".blog-filter-btn");
+  if (!filterButtons.length) return;
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.getAttribute("data-blog-filter") || "all";
+      setBlogCategoryFilter(category);
+    });
+  });
+}
+
+/* ----------------------------------------------------------------------------
    7. ENQUIRY MODAL HANDLER WITH DIRECT WHATSAPP FORWARDING
    ---------------------------------------------------------------------------- */
 let modalInstance = null;
@@ -499,6 +590,13 @@ function initSmoothScroll() {
 
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
+        if (targetElement.classList.contains("blog-card")) {
+          const cardCat = targetElement.getAttribute("data-category");
+          if (cardCat) {
+            setBlogCategoryFilter(cardCat);
+          }
+        }
+
         e.preventDefault();
         const headerOffset = 80;
         const elementPosition = targetElement.getBoundingClientRect().top;

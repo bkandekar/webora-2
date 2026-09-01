@@ -46,6 +46,23 @@
         <a href="#calculator" class="nav-link">Cost Calculator</a>
         <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#portfolio" class="nav-link">Portfolio</a>
+        <!-- BLOG WITH SUB-MENU DROPDOWN -->
+        <div class="nav-item-dropdown">
+          <a href="#blog" class="nav-link nav-dropdown-trigger" id="blogDropdownTrigger" aria-expanded="false" aria-haspopup="true">
+            <span>Blog</span>
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="nav-dropdown-menu" aria-labelledby="blogDropdownTrigger">
+            <a href="#blog" class="dropdown-link" data-blog-filter-trigger="all">All Articles</a>
+            <a href="#blog-coaching" class="dropdown-link" data-blog-filter-trigger="coaching">Coaching Institutes</a>
+            <a href="#blog-clinics" class="dropdown-link" data-blog-filter-trigger="clinic">Clinics & Doctors</a>
+            <a href="#blog-restaurants" class="dropdown-link" data-blog-filter-trigger="restaurant">Restaurants & Cafes</a>
+            <a href="#blog-seo" class="dropdown-link" data-blog-filter-trigger="seo">Local SEO & Speed</a>
+            <a href="#blog-pricing" class="dropdown-link" data-blog-filter-trigger="pricing">Pricing & Cost Guides</a>
+          </div>
+        </div>
         <a href="#process" class="nav-link">How It Works</a>
         <a href="#testimonials" class="nav-link">Testimonials</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -1271,7 +1288,225 @@
     </section>
 
     <!-- =======================================================================
-         SECTION 12: FINAL CTA BANNER (DEEP NAVY & ELECTRIC GOLD)
+         SECTION 12: BLOG / WEBSITE TIPS & LOCAL GUIDES
+         ======================================================================= -->
+    <section id="blog" class="blog-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge cyan">Website Tips & Guides</span>
+          <h2 class="section-title">Website Tips & Local Business Guides</h2>
+          <p class="section-subtitle">Practical articles that help local businesses in Maharashtra get more customers through their website.</p>
+
+          <!-- Category Filter Tabs -->
+          <div class="blog-filter-tabs" role="tablist" aria-label="Blog Category Filters">
+            <button type="button" class="btn btn-sm btn-gold blog-filter-btn active" data-blog-filter="all">All</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="coaching">Coaching Institutes</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="clinic">Clinics & Doctors</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="restaurant">Restaurants</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="seo">Local SEO & Speed</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="pricing">Pricing Guides</button>
+          </div>
+        </div>
+
+        <!-- Blog Cards Grid -->
+        <div class="blog-grid">
+          <!-- Article 1: Coaching -->
+          <article id="blog-coaching" class="blog-card" data-category="coaching">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder" data-placeholder-id="blog-1">
+                <div class="placeholder-corner corner-tl"></div>
+                <div class="placeholder-corner corner-tr"></div>
+                <div class="placeholder-corner corner-bl"></div>
+                <div class="placeholder-corner corner-br"></div>
+                <span class="placeholder-tag">Coaching Guide</span>
+                <p class="placeholder-text">[PLACEHOLDER: Blog cover — coaching classroom / students, 600x340px]</p>
+                <span class="placeholder-dim">600 × 340 px</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Coaching Institutes</span>
+                <span class="blog-read-time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  6 min read
+                </span>
+              </div>
+              <h3 class="blog-title">Why Every Coaching Institute in Kolhapur Needs a Dedicated Website in 2026</h3>
+              <p class="blog-excerpt">Generic Facebook pages are no longer enough. A proper coaching website with course pages, faculty profiles and WhatsApp admission forms brings more student inquiries.</p>
+              <div class="blog-footer-action">
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Coaching Website Strategy">
+                  Read Guide & Consult
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2: Clinics -->
+          <article id="blog-clinics" class="blog-card" data-category="clinic">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder" data-placeholder-id="blog-2">
+                <div class="placeholder-corner corner-tl"></div>
+                <div class="placeholder-corner corner-tr"></div>
+                <div class="placeholder-corner corner-bl"></div>
+                <div class="placeholder-corner corner-br"></div>
+                <span class="placeholder-tag">Clinic Guide</span>
+                <p class="placeholder-text">[PLACEHOLDER: Blog cover — modern clinic / doctor, 600x340px]</p>
+                <span class="placeholder-dim">600 × 340 px</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Clinics & Doctors</span>
+                <span class="blog-read-time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  5 min read
+                </span>
+              </div>
+              <h3 class="blog-title">7 Must-Have Features on a Clinic or Doctor Website That Actually Get Appointments</h3>
+              <p class="blog-excerpt">One-tap appointment booking, Google Maps reviews and WhatsApp consultation buttons — the features that turn website visitors into patients.</p>
+              <div class="blog-footer-action">
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Clinic Website Strategy">
+                  Read Guide & Consult
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3: Restaurants -->
+          <article id="blog-restaurants" class="blog-card" data-category="restaurant">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder" data-placeholder-id="blog-3">
+                <div class="placeholder-corner corner-tl"></div>
+                <div class="placeholder-corner corner-tr"></div>
+                <div class="placeholder-corner corner-bl"></div>
+                <div class="placeholder-corner corner-br"></div>
+                <span class="placeholder-tag">Restaurant Guide</span>
+                <p class="placeholder-text">[PLACEHOLDER: Blog cover — restaurant interior / food, 600x340px]</p>
+                <span class="placeholder-dim">600 × 340 px</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Restaurants</span>
+                <span class="blog-read-time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  5 min read
+                </span>
+              </div>
+              <h3 class="blog-title">How Restaurants & Cafes Are Getting More Table Bookings with a Simple Website</h3>
+              <p class="blog-excerpt">Digital menu, WhatsApp takeaway orders and online table reservation — practical ways a restaurant website increases dine-in and delivery orders.</p>
+              <div class="blog-footer-action">
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Restaurant Website Strategy">
+                  Read Guide & Consult
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4: Pricing -->
+          <article id="blog-pricing" class="blog-card" data-category="pricing">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder" data-placeholder-id="blog-4">
+                <div class="placeholder-corner corner-tl"></div>
+                <div class="placeholder-corner corner-tr"></div>
+                <div class="placeholder-corner corner-bl"></div>
+                <div class="placeholder-corner corner-br"></div>
+                <span class="placeholder-tag">Pricing Guide</span>
+                <p class="placeholder-text">[PLACEHOLDER: Blog cover — calculator / pricing, 600x340px]</p>
+                <span class="placeholder-dim">600 × 340 px</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Pricing Guides</span>
+                <span class="blog-read-time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  7 min read
+                </span>
+              </div>
+              <h3 class="blog-title">Local Business Website Cost in Maharashtra 2026 — Real Price Breakdown</h3>
+              <p class="blog-excerpt">Transparent look at what a good local business website actually costs in Kolhapur, Pune and nearby cities. No hidden charges.</p>
+              <div class="blog-footer-action">
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Website Cost Breakdown">
+                  Read Guide & Consult
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5: SEO & Speed -->
+          <article id="blog-seo" class="blog-card" data-category="seo">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder" data-placeholder-id="blog-5">
+                <div class="placeholder-corner corner-tl"></div>
+                <div class="placeholder-corner corner-tr"></div>
+                <div class="placeholder-corner corner-bl"></div>
+                <div class="placeholder-corner corner-br"></div>
+                <span class="placeholder-tag">Speed Guide</span>
+                <p class="placeholder-text">[PLACEHOLDER: Blog cover — mobile phone slow loading, 600x340px]</p>
+                <span class="placeholder-dim">600 × 340 px</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Local SEO & Speed</span>
+                <span class="blog-read-time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  6 min read
+                </span>
+              </div>
+              <h3 class="blog-title">Why Your Current Website Is Slow on Mobile (And How It Is Costing You Customers)</h3>
+              <p class="blog-excerpt">Most local business websites take 4–6 seconds to load on mobile. Learn what a sub-1.2s website can do for ranking and inquiries.</p>
+              <div class="blog-footer-action">
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Speed & Mobile Audit">
+                  Read Guide & Consult
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 6: Google Business Profile & SEO -->
+          <article id="blog-gbp-seo" class="blog-card" data-category="seo">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder" data-placeholder-id="blog-6">
+                <div class="placeholder-corner corner-tl"></div>
+                <div class="placeholder-corner corner-tr"></div>
+                <div class="placeholder-corner corner-bl"></div>
+                <div class="placeholder-corner corner-br"></div>
+                <span class="placeholder-tag">Local SEO Guide</span>
+                <p class="placeholder-text">[PLACEHOLDER: Blog cover — Google Maps pin + business listing, 600x340px]</p>
+                <span class="placeholder-dim">600 × 340 px</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Local SEO & Speed</span>
+                <span class="blog-read-time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  5 min read
+                </span>
+              </div>
+              <h3 class="blog-title">Google Business Profile + Website — The Combination That Ranks Local Businesses Higher</h3>
+              <p class="blog-excerpt">How connecting a fast website with an optimised Google Business Profile helps clinics, coaching classes and shops appear higher on Google Maps.</p>
+              <div class="blog-footer-action">
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Google Business Profile + SEO">
+                  Read Guide & Consult
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 13: FINAL CTA BANNER (DEEP NAVY & ELECTRIC GOLD)
          ======================================================================= -->
     <section class="cta-banner-section">
       <div class="container">
@@ -1336,6 +1571,7 @@
             <a href="#calculator" class="footer-link">Cost Calculator</a>
             <a href="#pricing" class="footer-link">Pricing Plans</a>
             <a href="#portfolio" class="footer-link">Portfolio Demos</a>
+            <a href="#blog" class="footer-link">Blog & Guides</a>
             <a href="#process" class="footer-link">How It Works</a>
             <a href="#testimonials" class="footer-link">Testimonials</a>
           </div>
