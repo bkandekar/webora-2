@@ -46,7 +46,7 @@
         <a href="#calculator" class="nav-link">Cost Calculator</a>
         <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#portfolio" class="nav-link">Portfolio</a>
-        <!-- BLOG WITH SUB-MENU DROPDOWN -->
+        <!-- BLOG WITH SUB-MENU DROPDOWN (Conversion Categories) -->
         <div class="nav-item-dropdown" id="navBlogDropdown">
           <button type="button" class="nav-link nav-dropdown-trigger" id="blogDropdownTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="blogDropdownMenu">
             <span>Blog</span>
@@ -56,11 +56,10 @@
           </button>
           <div class="nav-dropdown-menu" id="blogDropdownMenu" aria-labelledby="blogDropdownTrigger">
             <a href="#blog" class="dropdown-link" data-blog-filter-trigger="all">All Articles</a>
-            <a href="#blog-coaching" class="dropdown-link" data-blog-filter-trigger="coaching">Coaching Institutes</a>
-            <a href="#blog-clinics" class="dropdown-link" data-blog-filter-trigger="clinic">Clinics & Doctors</a>
-            <a href="#blog-restaurants" class="dropdown-link" data-blog-filter-trigger="restaurant">Restaurants & Cafes</a>
-            <a href="#blog-seo" class="dropdown-link" data-blog-filter-trigger="seo">Local SEO & Speed</a>
-            <a href="#blog-pricing" class="dropdown-link" data-blog-filter-trigger="pricing">Pricing & Cost Guides</a>
+            <a href="#blog" class="dropdown-link" data-blog-filter-trigger="customers">More Customers Online</a>
+            <a href="#blog" class="dropdown-link" data-blog-filter-trigger="industry">Industry Spotlights</a>
+            <a href="#blog" class="dropdown-link" data-blog-filter-trigger="basics">Website Basics</a>
+            <a href="#blog" class="dropdown-link" data-blog-filter-trigger="success">Client Success Stories</a>
           </div>
         </div>
         <a href="#process" class="nav-link">How It Works</a>
@@ -211,19 +210,8 @@
               </div>
             </div>
 
-            <div class="blueprint-placeholder" data-placeholder-id="hero-mockup">
-              <div class="placeholder-corner corner-tl"></div>
-              <div class="placeholder-corner corner-tr"></div>
-              <div class="placeholder-corner corner-bl"></div>
-              <div class="placeholder-corner corner-br"></div>
-              <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-              <span class="placeholder-tag">Blueprint Mockup</span>
-              <p class="placeholder-text">[PLACEHOLDER: Hero mockup — laptop + phone showing high-converting agency website, 1200x900px]</p>
-              <span class="placeholder-dim">1200 × 900 px</span>
+            <div class="blueprint-placeholder has-image" data-placeholder-id="hero-mockup">
+              <img src="images/hero-mockup.webp" alt="Webora high-converting website mockup on laptop and smartphone" loading="lazy">
             </div>
 
             <div class="floating-metric-badge bottom-right">
@@ -945,15 +933,9 @@
           <!-- Project 1: Coaching Institute -->
           <div class="portfolio-card" data-category="coaching">
             <div class="portfolio-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="portfolio-1">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Coaching Demo</span>
-                <p class="placeholder-text">[PLACEHOLDER: Coaching Institute Website — Apex Academy, Kolhapur, 800x600px]</p>
-                <span class="placeholder-dim">800 × 600 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="portfolio-1">
+              <img src="images/portfolio-coaching.webp" alt="Apex Academy coaching institute website demo" loading="lazy">
+            </div>
             </div>
             <div class="portfolio-content">
               <span class="portfolio-tag">Coaching Institute Website</span>
@@ -974,15 +956,9 @@
           <!-- Project 2: Clinic & Doctor -->
           <div class="portfolio-card" data-category="clinic">
             <div class="portfolio-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="portfolio-2">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Clinic Demo</span>
-                <p class="placeholder-text">[PLACEHOLDER: Clinic Website — Sanjeevani Dental Care, Pune, 800x600px]</p>
-                <span class="placeholder-dim">800 × 600 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="portfolio-2">
+              <img src="images/portfolio-clinic.webp" alt="Sanjeevani Dental Care clinic website demo" loading="lazy">
+            </div>
             </div>
             <div class="portfolio-content">
               <span class="portfolio-tag">Clinic Website</span>
@@ -1003,15 +979,9 @@
           <!-- Project 3: Restaurant & Cafe -->
           <div class="portfolio-card" data-category="restaurant">
             <div class="portfolio-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="portfolio-3">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Restaurant Demo</span>
-                <p class="placeholder-text">[PLACEHOLDER: Restaurant Website — Spice Route Bistro, Kolhapur, 800x600px]</p>
-                <span class="placeholder-dim">800 × 600 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="portfolio-3">
+              <img src="images/portfolio-restaurant.webp" alt="Spice Route Bistro restaurant website demo" loading="lazy">
+            </div>
             </div>
             <div class="portfolio-content">
               <span class="portfolio-tag">Restaurant Website</span>
@@ -1032,15 +1002,9 @@
           <!-- Project 4: Real Estate & Construction -->
           <div class="portfolio-card" data-category="realestate">
             <div class="portfolio-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="portfolio-4">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Real Estate Demo</span>
-                <p class="placeholder-text">[PLACEHOLDER: Real Estate Website — Heritage Homes, Kolhapur, 800x600px]</p>
-                <span class="placeholder-dim">800 × 600 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="portfolio-4">
+              <img src="images/portfolio-realestate.webp" alt="Heritage Homes real estate website demo" loading="lazy">
+            </div>
             </div>
             <div class="portfolio-content">
               <span class="portfolio-tag">Real Estate & Property Portal</span>
@@ -1061,15 +1025,9 @@
           <!-- Project 5: E-Commerce Store -->
           <div class="portfolio-card" data-category="realestate">
             <div class="portfolio-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="portfolio-5">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">E-Commerce Demo</span>
-                <p class="placeholder-text">[PLACEHOLDER: E-Commerce Store — MahaSpices Organic Store, 800x600px]</p>
-                <span class="placeholder-dim">800 × 600 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="portfolio-5">
+              <img src="images/portfolio-ecommerce.webp" alt="MahaSpices organic food e-commerce website demo" loading="lazy">
+            </div>
             </div>
             <div class="portfolio-content">
               <span class="portfolio-tag">E-commerce / Online Store</span>
@@ -1090,15 +1048,9 @@
           <!-- Project 6: Local Service Provider -->
           <div class="portfolio-card" data-category="coaching">
             <div class="portfolio-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="portfolio-6">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Service Pro Demo</span>
-                <p class="placeholder-text">[PLACEHOLDER: Service Provider Website — ProCraft Interior, Kolhapur, 800x600px]</p>
-                <span class="placeholder-dim">800 × 600 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="portfolio-6">
+              <img src="images/portfolio-service.webp" alt="ProCraft Interior renovation service website demo" loading="lazy">
+            </div>
             </div>
             <div class="portfolio-content">
               <span class="portfolio-tag">Local Service Provider Website</span>
@@ -1288,222 +1240,199 @@
     </section>
 
     <!-- =======================================================================
-         SECTION 12: BLOG / WEBSITE TIPS & LOCAL GUIDES
+         SECTION 12: BLOG — Conversion-Focused Categories
+         Categories: More Customers Online | Industry Spotlights | Website Basics | Client Success Stories
          ======================================================================= -->
-    <section id="blog" class="blog-section">
+    <section id="blog" class="blog-section" itemscope itemtype="https://schema.org/Blog">
       <div class="container">
         <div class="section-header">
-          <span class="section-badge cyan">Website Tips & Guides</span>
-          <h2 class="section-title">Website Tips & Local Business Guides</h2>
-          <p class="section-subtitle">Practical articles that help local businesses in Maharashtra get more customers through their website.</p>
+          <span class="section-badge cyan">Website Tips That Bring Customers</span>
+          <h2 class="section-title" itemprop="name">Website Tips That Bring More Customers</h2>
+          <p class="section-subtitle" itemprop="description">Practical guides for local businesses in Maharashtra — how to get more enquiries, calls and walk-ins through your website.</p>
 
           <!-- Category Filter Tabs -->
           <div class="blog-filter-tabs" role="tablist" aria-label="Blog Category Filters">
             <button type="button" class="btn btn-sm btn-gold blog-filter-btn active" data-blog-filter="all">All</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="coaching">Coaching Institutes</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="clinic">Clinics & Doctors</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="restaurant">Restaurants</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="seo">Local SEO & Speed</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="pricing">Pricing Guides</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="customers">More Customers Online</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="industry">Industry Spotlights</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="basics">Website Basics</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="success">Client Success Stories</button>
           </div>
         </div>
 
-        <!-- Blog Cards Grid -->
-        <div class="blog-grid">
-          <!-- Article 1: Coaching -->
-          <article id="blog-coaching" class="blog-card" data-category="coaching">
+        <div class="blog-grid" id="blogGrid">
+
+          <!-- 1. More Customers Online -->
+          <article class="blog-card card" data-category="customers" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="blog-1">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Coaching Guide</span>
-                <p class="placeholder-text">[PLACEHOLDER: Blog cover — coaching classroom / students, 600x340px]</p>
-                <span class="placeholder-dim">600 × 340 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="blog-1">
+              <img src="images/blog-1.webp" alt="Local businesses getting more WhatsApp enquiries" loading="lazy">
+            </div>
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Coaching Institutes</span>
-                <span class="blog-read-time">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  6 min read
-                </span>
+                <span class="blog-category-badge">More Customers Online</span>
+                <span class="blog-read-time">5 min read</span>
               </div>
-              <h3 class="blog-title">Why Every Coaching Institute in Kolhapur Needs a Dedicated Website in 2026</h3>
-              <p class="blog-excerpt">Generic Facebook pages are no longer enough. A proper coaching website with course pages, faculty profiles and WhatsApp admission forms brings more student inquiries.</p>
+              <h3 class="blog-title" itemprop="headline">How Local Businesses Get More WhatsApp Enquiries with a Simple Website</h3>
+              <p class="blog-excerpt" itemprop="description">Most customers now prefer WhatsApp. See how a clear website with click-to-chat buttons brings more messages and calls every day.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Coaching Website Strategy">
-                  Read Guide & Consult
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-blog="1">Read More</button>
               </div>
             </div>
           </article>
 
-          <!-- Article 2: Clinics -->
-          <article id="blog-clinics" class="blog-card" data-category="clinic">
+          <!-- 2. More Customers Online -->
+          <article class="blog-card card" data-category="customers" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="blog-2">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Clinic Guide</span>
-                <p class="placeholder-text">[PLACEHOLDER: Blog cover — modern clinic / doctor, 600x340px]</p>
-                <span class="placeholder-dim">600 × 340 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="blog-2">
+              <img src="images/blog-2.webp" alt="Why website is not getting calls and how to fix it" loading="lazy">
+            </div>
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Clinics & Doctors</span>
-                <span class="blog-read-time">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  5 min read
-                </span>
+                <span class="blog-category-badge">More Customers Online</span>
+                <span class="blog-read-time">6 min read</span>
               </div>
-              <h3 class="blog-title">7 Must-Have Features on a Clinic or Doctor Website That Actually Get Appointments</h3>
-              <p class="blog-excerpt">One-tap appointment booking, Google Maps reviews and WhatsApp consultation buttons — the features that turn website visitors into patients.</p>
+              <h3 class="blog-title" itemprop="headline">Why Your Website Is Not Getting Calls (And How to Fix It Fast)</h3>
+              <p class="blog-excerpt" itemprop="description">Having a website is not enough. Learn the simple reasons why visitors leave without calling and what changes bring more enquiries.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Clinic Website Strategy">
-                  Read Guide & Consult
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-blog="2">Read More</button>
               </div>
             </div>
           </article>
 
-          <!-- Article 3: Restaurants -->
-          <article id="blog-restaurants" class="blog-card" data-category="restaurant">
+          <!-- 3. Industry Spotlights - Coaching -->
+          <article class="blog-card card" data-category="industry" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="blog-3">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Restaurant Guide</span>
-                <p class="placeholder-text">[PLACEHOLDER: Blog cover — restaurant interior / food, 600x340px]</p>
-                <span class="placeholder-dim">600 × 340 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="blog-3">
+              <img src="images/blog-3.webp" alt="Coaching institute website for more student admissions" loading="lazy">
+            </div>
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Restaurants</span>
-                <span class="blog-read-time">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  5 min read
-                </span>
+                <span class="blog-category-badge">Industry Spotlights</span>
+                <span class="blog-read-time">6 min read</span>
               </div>
-              <h3 class="blog-title">How Restaurants & Cafes Are Getting More Table Bookings with a Simple Website</h3>
-              <p class="blog-excerpt">Digital menu, WhatsApp takeaway orders and online table reservation — practical ways a restaurant website increases dine-in and delivery orders.</p>
+              <h3 class="blog-title" itemprop="headline">Coaching Institute Website That Brings More Student Admissions</h3>
+              <p class="blog-excerpt" itemprop="description">What pages and features a coaching class in Kolhapur or Pune actually needs to get more admission enquiries online.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Restaurant Website Strategy">
-                  Read Guide & Consult
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-blog="3">Read More</button>
               </div>
             </div>
           </article>
 
-          <!-- Article 4: Pricing -->
-          <article id="blog-pricing" class="blog-card" data-category="pricing">
+          <!-- 4. Industry Spotlights - Beauty -->
+          <article class="blog-card card" data-category="industry" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="blog-4">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Pricing Guide</span>
-                <p class="placeholder-text">[PLACEHOLDER: Blog cover — calculator / pricing, 600x340px]</p>
-                <span class="placeholder-dim">600 × 340 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="blog-4">
+              <img src="images/blog-4.webp" alt="Beauty parlour and salon website for more appointments" loading="lazy">
+            </div>
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Pricing Guides</span>
-                <span class="blog-read-time">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  7 min read
-                </span>
+                <span class="blog-category-badge">Industry Spotlights</span>
+                <span class="blog-read-time">5 min read</span>
               </div>
-              <h3 class="blog-title">Local Business Website Cost in Maharashtra 2026 — Real Price Breakdown</h3>
-              <p class="blog-excerpt">Transparent look at what a good local business website actually costs in Kolhapur, Pune and nearby cities. No hidden charges.</p>
+              <h3 class="blog-title" itemprop="headline">Beauty Parlour & Salon Website Ideas That Get More Appointments</h3>
+              <p class="blog-excerpt" itemprop="description">Simple website features that help beauty parlours and salons get direct bookings instead of depending only on Instagram.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Website Cost Breakdown">
-                  Read Guide & Consult
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-blog="4">Read More</button>
               </div>
             </div>
           </article>
 
-          <!-- Article 5: SEO & Speed -->
-          <article id="blog-seo" class="blog-card" data-category="seo">
+          <!-- 5. Website Basics - WhatsApp -->
+          <article class="blog-card card" data-category="basics" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="blog-5">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Speed Guide</span>
-                <p class="placeholder-text">[PLACEHOLDER: Blog cover — mobile phone slow loading, 600x340px]</p>
-                <span class="placeholder-dim">600 × 340 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="blog-5">
+              <img src="images/blog-5.webp" alt="WhatsApp button on local business website" loading="lazy">
+            </div>
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Local SEO & Speed</span>
-                <span class="blog-read-time">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  6 min read
-                </span>
+                <span class="blog-category-badge">Website Basics</span>
+                <span class="blog-read-time">4 min read</span>
               </div>
-              <h3 class="blog-title">Why Your Current Website Is Slow on Mobile (And How It Is Costing You Customers)</h3>
-              <p class="blog-excerpt">Most local business websites take 4–6 seconds to load on mobile. Learn what a sub-1.2s website can do for ranking and inquiries.</p>
+              <h3 class="blog-title" itemprop="headline">Why Every Local Business Website Needs a WhatsApp Button</h3>
+              <p class="blog-excerpt" itemprop="description">Customers prefer messaging over calling. See why a WhatsApp button is one of the highest converting features for local businesses.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Speed & Mobile Audit">
-                  Read Guide & Consult
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-blog="5">Read More</button>
               </div>
             </div>
           </article>
 
-          <!-- Article 6: Google Business Profile & SEO -->
-          <article id="blog-gbp-seo" class="blog-card" data-category="seo">
+          <!-- 6. Website Basics - Google Maps -->
+          <article class="blog-card card" data-category="basics" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-img-box">
-              <div class="blueprint-placeholder" data-placeholder-id="blog-6">
-                <div class="placeholder-corner corner-tl"></div>
-                <div class="placeholder-corner corner-tr"></div>
-                <div class="placeholder-corner corner-bl"></div>
-                <div class="placeholder-corner corner-br"></div>
-                <span class="placeholder-tag">Local SEO Guide</span>
-                <p class="placeholder-text">[PLACEHOLDER: Blog cover — Google Maps pin + business listing, 600x340px]</p>
-                <span class="placeholder-dim">600 × 340 px</span>
-              </div>
+              <div class="blueprint-placeholder has-image" data-placeholder-id="blog-6">
+              <img src="images/blog-6.webp" alt="Google Maps on website for more walk-ins" loading="lazy">
+            </div>
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Local SEO & Speed</span>
-                <span class="blog-read-time">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                  5 min read
-                </span>
+                <span class="blog-category-badge">Website Basics</span>
+                <span class="blog-read-time">4 min read</span>
               </div>
-              <h3 class="blog-title">Google Business Profile + Website — The Combination That Ranks Local Businesses Higher</h3>
-              <p class="blog-excerpt">How connecting a fast website with an optimised Google Business Profile helps clinics, coaching classes and shops appear higher on Google Maps.</p>
+              <h3 class="blog-title" itemprop="headline">Google Maps on Your Website — Simple Way to Get More Walk-ins</h3>
+              <p class="blog-excerpt" itemprop="description">Adding your location correctly on the website helps customers find you easily and increases trust and footfall.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Google Business Profile + SEO">
-                  Read Guide & Consult
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-blog="6">Read More</button>
               </div>
             </div>
           </article>
+
+          <!-- 7. Client Success Stories - Coaching -->
+          <article class="blog-card card" data-category="success" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder has-image" data-placeholder-id="blog-7">
+              <img src="images/blog-7.webp" alt="Coaching class success story more admission enquiries" loading="lazy">
+            </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Client Success Stories</span>
+                <span class="blog-read-time">5 min read</span>
+              </div>
+              <h3 class="blog-title" itemprop="headline">How a Coaching Class in Kolhapur Got 40+ Admission Enquiries in 30 Days</h3>
+              <p class="blog-excerpt" itemprop="description">Real example of how a simple website with course pages and WhatsApp form changed enquiry numbers for a local coaching institute.</p>
+              <div class="blog-footer-action">
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-blog="7">Read More</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Client Success Stories - Clinic -->
+          <article class="blog-card card" data-category="success" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder has-image" data-placeholder-id="blog-8">
+              <img src="images/blog-8.webp" alt="Clinic website success story online appointments" loading="lazy">
+            </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Client Success Stories</span>
+                <span class="blog-read-time">5 min read</span>
+              </div>
+              <h3 class="blog-title" itemprop="headline">Clinic Website That Started Getting Online Appointments Within 2 Weeks</h3>
+              <p class="blog-excerpt" itemprop="description">See what changed after a clinic in Pune got a fast, mobile-friendly website with appointment booking and Google Maps.</p>
+              <div class="blog-footer-action">
+                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-blog="8">Read More</button>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
+
+    <!-- Blog Full Article Modal -->
+    <div class="modal-overlay" id="blogModal" aria-hidden="true">
+      <div class="modal blog-modal" role="dialog" aria-labelledby="blogModalTitle">
+        <button class="modal-close" id="blogModalClose" aria-label="Close article">&times;</button>
+        <div id="blogModalContent"></div>
+      </div>
+    </div>
 
     <!-- =======================================================================
          SECTION 13: FINAL CTA BANNER (DEEP NAVY & ELECTRIC GOLD)
