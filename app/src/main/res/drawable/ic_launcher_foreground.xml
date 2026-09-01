@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Center container - Monitor frame -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF00D4FF"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M28,32 H80 A4,4 0 0,1 84,36 V66 A4,4 0 0,1 80,70 H28 A4,4 0 0,1 24,66 V36 A4,4 0 0,1 28,32 Z" />
+    <!-- Stand -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF00D4FF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M54,70 V78 M42,78 H66" />
+    <!-- Electric Gold 'W' code symbol inside monitor -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFC107"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M34,44 L42,60 L54,48 L66,60 L74,44" />
+    <!-- Rocket Sparkle / Star top right -->
+    <path
+        android:fillColor="#FFFFC107"
+        android:pathData="M78,25 L80,28 L83,30 L80,32 L78,35 L76,32 L73,30 L76,28 Z" />
+</vector>
