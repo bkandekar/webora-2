@@ -47,14 +47,14 @@
         <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#portfolio" class="nav-link">Portfolio</a>
         <!-- BLOG WITH SUB-MENU DROPDOWN -->
-        <div class="nav-item-dropdown">
-          <a href="#blog" class="nav-link nav-dropdown-trigger" id="blogDropdownTrigger" aria-expanded="false" aria-haspopup="true">
+        <div class="nav-item-dropdown" id="navBlogDropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" id="blogDropdownTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="blogDropdownMenu">
             <span>Blog</span>
-            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="dropdown-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
-          </a>
-          <div class="nav-dropdown-menu" aria-labelledby="blogDropdownTrigger">
+          </button>
+          <div class="nav-dropdown-menu" id="blogDropdownMenu" aria-labelledby="blogDropdownTrigger">
             <a href="#blog" class="dropdown-link" data-blog-filter-trigger="all">All Articles</a>
             <a href="#blog-coaching" class="dropdown-link" data-blog-filter-trigger="coaching">Coaching Institutes</a>
             <a href="#blog-clinics" class="dropdown-link" data-blog-filter-trigger="clinic">Clinics & Doctors</a>

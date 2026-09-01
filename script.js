@@ -130,32 +130,59 @@ function initStickyHeader() {
 }
 
 /* ----------------------------------------------------------------------------
-   3. MOBILE NAVIGATION MENU TOGGLE
+   3. MOBILE NAVIGATION & HAMBURGER MENU
    ---------------------------------------------------------------------------- */
+function closeMobileMenu() {
+  const menuToggle = document.querySelector(".mobile-menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+  const dropdownContainer = document.querySelector(".nav-item-dropdown");
+  const dropdownTrigger = document.getElementById("blogDropdownTrigger");
+
+  if (menuToggle) menuToggle.classList.remove("open");
+  if (navMenu) navMenu.classList.remove("open");
+  document.body.style.overflow = "";
+
+  if (dropdownContainer) dropdownContainer.classList.remove("open");
+  if (dropdownTrigger) dropdownTrigger.setAttribute("aria-expanded", "false");
+}
+
 function initMobileNavigation() {
   const menuToggle = document.querySelector(".mobile-menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
-  const navLinks = document.querySelectorAll(".nav-link:not(.nav-dropdown-trigger), .dropdown-link");
+  const topNavLinks = document.querySelectorAll(".nav-menu > a.nav-link");
 
   if (!menuToggle || !navMenu) return;
 
-  menuToggle.addEventListener("click", () => {
-    menuToggle.classList.toggle("open");
-    navMenu.classList.toggle("open");
-    document.body.style.overflow = navMenu.classList.contains("open") ? "hidden" : "";
+  // Toggle mobile navigation drawer
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = navMenu.classList.toggle("open");
+    menuToggle.classList.toggle("open", isOpen);
+    document.body.style.overflow = isOpen ? "hidden" : "";
   });
 
-  // Close menu when non-dropdown navigation links are clicked
-  navLinks.forEach(link => {
+  // Close hamburger menu when a direct top-level link is clicked
+  topNavLinks.forEach(link => {
     link.addEventListener("click", () => {
-      menuToggle.classList.remove("open");
-      navMenu.classList.remove("open");
-      document.body.style.overflow = "";
-      const dropdownParent = document.querySelector(".nav-item-dropdown");
-      if (dropdownParent) {
-        dropdownParent.classList.remove("open");
-      }
+      closeMobileMenu();
     });
+  });
+
+  // Close menu if user clicks outside header when mobile menu is open
+  document.addEventListener("click", (e) => {
+    if (navMenu.classList.contains("open")) {
+      const header = document.querySelector(".site-header");
+      if (header && !header.contains(e.target)) {
+        closeMobileMenu();
+      }
+    }
+  });
+
+  // Close menu on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navMenu.classList.contains("open")) {
+      closeMobileMenu();
+    }
   });
 }
 
@@ -169,30 +196,53 @@ function initBlogNavDropdown() {
 
   if (!dropdownContainer || !dropdownTrigger) return;
 
-  // Toggle on click (essential for mobile & touch devices)
+  // Dedicated toggle handler for trigger button (works across mobile & touch devices)
   dropdownTrigger.addEventListener("click", (e) => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      dropdownContainer.classList.toggle("open");
-      const isExpanded = dropdownContainer.classList.contains("open");
-      dropdownTrigger.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+    e.preventDefault();
+    e.stopPropagation();
+
+    const isCurrentlyOpen = dropdownContainer.classList.contains("open");
+    if (isCurrentlyOpen) {
+      dropdownContainer.classList.remove("open");
+      dropdownTrigger.setAttribute("aria-expanded", "false");
+    } else {
+      dropdownContainer.classList.add("open");
+      dropdownTrigger.setAttribute("aria-expanded", "true");
     }
   });
 
-  // Dropdown link clicks: filter sync + auto close + smooth scroll
+  // Dropdown sub-link clicks: apply filter + close mobile menu + smooth scroll to target
   dropdownLinks.forEach(link => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (e) => {
       const filterTarget = link.getAttribute("data-blog-filter-trigger");
       if (filterTarget) {
         setBlogCategoryFilter(filterTarget);
       }
 
-      dropdownContainer.classList.remove("open");
-      dropdownTrigger.setAttribute("aria-expanded", "false");
+      // Close mobile navigation drawer cleanly
+      closeMobileMenu();
+
+      // Smooth scroll to the target anchor with a slight delay to allow drawer closing
+      const targetHref = link.getAttribute("href");
+      if (targetHref && targetHref.startsWith("#")) {
+        const targetElement = document.querySelector(targetHref);
+        if (targetElement) {
+          e.preventDefault();
+          setTimeout(() => {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }, 120);
+        }
+      }
     });
   });
 
-  // Close dropdown when clicking outside on desktop
+  // Close dropdown on desktop when clicking outside
   document.addEventListener("click", (e) => {
     if (!dropdownContainer.contains(e.target)) {
       dropdownContainer.classList.remove("open");
@@ -583,7 +633,7 @@ function handleFormSubmission(e) {
    8. SMOOTH SCROLL FOR IN-PAGE ANCHOR LINKS
    ---------------------------------------------------------------------------- */
 function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]:not(.nav-dropdown-trigger):not(.dropdown-link)').forEach(anchor => {
     anchor.addEventListener("click", function(e) {
       const targetId = this.getAttribute("href");
       if (targetId === "#" || !targetId) return;
