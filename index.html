@@ -56,11 +56,10 @@
           </button>
           <div class="nav-dropdown-menu" id="blogDropdownMenu" aria-labelledby="blogDropdownTrigger">
             <a href="#blog" class="dropdown-link" data-blog-filter-trigger="all">All Articles</a>
-            <a href="#blog-coaching" class="dropdown-link" data-blog-filter-trigger="coaching">Coaching Institutes</a>
-            <a href="#blog-clinics" class="dropdown-link" data-blog-filter-trigger="clinic">Clinics & Doctors</a>
-            <a href="#blog-restaurants" class="dropdown-link" data-blog-filter-trigger="restaurant">Restaurants & Cafes</a>
-            <a href="#blog-seo" class="dropdown-link" data-blog-filter-trigger="seo">Local SEO & Speed</a>
-            <a href="#blog-pricing" class="dropdown-link" data-blog-filter-trigger="pricing">Pricing & Cost Guides</a>
+            <a href="#blog-more-customers-speed" class="dropdown-link" data-blog-filter-trigger="more-customers">More Customers Online</a>
+            <a href="#blog-industry-coaching" class="dropdown-link" data-blog-filter-trigger="industry-spotlights">Industry Spotlights</a>
+            <a href="#blog-basics-pricing" class="dropdown-link" data-blog-filter-trigger="website-basics">Website Basics</a>
+            <a href="#blog-success-apex" class="dropdown-link" data-blog-filter-trigger="success-stories">Client Success Stories</a>
           </div>
         </div>
         <a href="#process" class="nav-link">How It Works</a>
@@ -1297,21 +1296,33 @@
           <h2 class="section-title">Website Tips & Local Business Guides</h2>
           <p class="section-subtitle">Practical articles that help local businesses in Maharashtra get more customers through their website.</p>
 
+          <!-- Blog Search Box -->
+          <div class="blog-search-wrapper">
+            <svg class="blog-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search articles (e.g. WhatsApp, pricing, coaching)..." aria-label="Search blog articles">
+          </div>
+          <p id="blogNoResultsMsg" class="blog-no-results" style="display:none;">No articles matched your search. Try a different keyword or clear the search box.</p>
+
           <!-- Category Filter Tabs -->
           <div class="blog-filter-tabs" role="tablist" aria-label="Blog Category Filters">
             <button type="button" class="btn btn-sm btn-gold blog-filter-btn active" data-blog-filter="all">All</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="coaching">Coaching Institutes</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="clinic">Clinics & Doctors</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="restaurant">Restaurants</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="seo">Local SEO & Speed</button>
-            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="pricing">Pricing Guides</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="more-customers">More Customers Online</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="industry-spotlights">Industry Spotlights</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="website-basics">Website Basics</button>
+            <button type="button" class="btn btn-sm btn-secondary blog-filter-btn" data-blog-filter="success-stories">Client Success Stories</button>
           </div>
         </div>
 
         <!-- Blog Cards Grid -->
         <div class="blog-grid">
-          <!-- Article 1: Coaching -->
-          <article id="blog-coaching" class="blog-card" data-category="coaching">
+          <!-- Article 1: Coaching (Industry Spotlights) -->
+          <!--
+            BLOG COVER IMAGE — generate in ChatGPT/DALL-E and upload as: images/blog/industry-coaching.jpg
+            Recommended size: 600 x 340 px (16:9), JPG or WEBP, under 150KB
+            Once uploaded, replace the <div class="blueprint-placeholder">...</div> block below with:
+            <img src="images/blog/industry-coaching.jpg" alt="Coaching institute website shown on laptop and mobile" width="600" height="340" loading="lazy">
+          -->
+          <article id="blog-industry-coaching" class="blog-card" data-category="industry-spotlights">
             <div class="blog-img-box">
               <div class="blueprint-placeholder" data-placeholder-id="blog-1">
                 <div class="placeholder-corner corner-tl"></div>
@@ -1325,25 +1336,35 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Coaching Institutes</span>
+                <span class="blog-category-badge">Industry Spotlights</span>
                 <span class="blog-read-time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                   6 min read
                 </span>
               </div>
+              <span class="blog-date">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Published: 12 Aug 2026
+              </span>
               <h3 class="blog-title">Why Every Coaching Institute in Kolhapur Needs a Dedicated Website in 2026</h3>
               <p class="blog-excerpt">Generic Facebook pages are no longer enough. A proper coaching website with course pages, faculty profiles and WhatsApp admission forms brings more student inquiries.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Coaching Website Strategy">
-                  Read Guide & Consult
+                <a href="blog/industry-coaching.html" class="btn btn-primary btn-sm blog-read-btn">
+                  Read Full Guide
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Article 2: Clinics -->
-          <article id="blog-clinics" class="blog-card" data-category="clinic">
+          <!-- Article 2: Clinics (Industry Spotlights) -->
+          <!--
+            BLOG COVER IMAGE — generate in ChatGPT/DALL-E and upload as: images/blog/industry-clinic.jpg
+            Recommended size: 600 x 340 px (16:9), JPG or WEBP, under 150KB
+            Once uploaded, replace the <div class="blueprint-placeholder">...</div> block below with:
+            <img src="images/blog/industry-clinic.jpg" alt="Modern clinic website on a mobile phone" width="600" height="340" loading="lazy">
+          -->
+          <article id="blog-industry-clinic" class="blog-card" data-category="industry-spotlights">
             <div class="blog-img-box">
               <div class="blueprint-placeholder" data-placeholder-id="blog-2">
                 <div class="placeholder-corner corner-tl"></div>
@@ -1357,25 +1378,35 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Clinics & Doctors</span>
+                <span class="blog-category-badge">Industry Spotlights</span>
                 <span class="blog-read-time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                   5 min read
                 </span>
               </div>
+              <span class="blog-date">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Published: 5 Aug 2026
+              </span>
               <h3 class="blog-title">7 Must-Have Features on a Clinic or Doctor Website That Actually Get Appointments</h3>
               <p class="blog-excerpt">One-tap appointment booking, Google Maps reviews and WhatsApp consultation buttons — the features that turn website visitors into patients.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Clinic Website Strategy">
-                  Read Guide & Consult
+                <a href="blog/industry-clinic.html" class="btn btn-primary btn-sm blog-read-btn">
+                  Read Full Guide
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Article 3: Restaurants -->
-          <article id="blog-restaurants" class="blog-card" data-category="restaurant">
+          <!-- Article 3: Restaurants (Industry Spotlights) -->
+          <!--
+            BLOG COVER IMAGE — generate in ChatGPT/DALL-E and upload as: images/blog/industry-restaurant.jpg
+            Recommended size: 600 x 340 px (16:9), JPG or WEBP, under 150KB
+            Once uploaded, replace the <div class="blueprint-placeholder">...</div> block below with:
+            <img src="images/blog/industry-restaurant.jpg" alt="Restaurant website with digital menu on a tablet" width="600" height="340" loading="lazy">
+          -->
+          <article id="blog-industry-restaurant" class="blog-card" data-category="industry-spotlights">
             <div class="blog-img-box">
               <div class="blueprint-placeholder" data-placeholder-id="blog-3">
                 <div class="placeholder-corner corner-tl"></div>
@@ -1389,25 +1420,35 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Restaurants</span>
+                <span class="blog-category-badge">Industry Spotlights</span>
                 <span class="blog-read-time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                   5 min read
                 </span>
               </div>
+              <span class="blog-date">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Published: 29 Jul 2026
+              </span>
               <h3 class="blog-title">How Restaurants & Cafes Are Getting More Table Bookings with a Simple Website</h3>
               <p class="blog-excerpt">Digital menu, WhatsApp takeaway orders and online table reservation — practical ways a restaurant website increases dine-in and delivery orders.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Restaurant Website Strategy">
-                  Read Guide & Consult
+                <a href="blog/industry-restaurant.html" class="btn btn-primary btn-sm blog-read-btn">
+                  Read Full Guide
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Article 4: Pricing -->
-          <article id="blog-pricing" class="blog-card" data-category="pricing">
+          <!-- Article 4: Pricing (Website Basics) -->
+          <!--
+            BLOG COVER IMAGE — generate in ChatGPT/DALL-E and upload as: images/blog/basics-pricing.jpg
+            Recommended size: 600 x 340 px (16:9), JPG or WEBP, under 150KB
+            Once uploaded, replace the <div class="blueprint-placeholder">...</div> block below with:
+            <img src="images/blog/basics-pricing.jpg" alt="Calculator and rupee coins representing website pricing" width="600" height="340" loading="lazy">
+          -->
+          <article id="blog-basics-pricing" class="blog-card" data-category="website-basics">
             <div class="blog-img-box">
               <div class="blueprint-placeholder" data-placeholder-id="blog-4">
                 <div class="placeholder-corner corner-tl"></div>
@@ -1421,25 +1462,35 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Pricing Guides</span>
+                <span class="blog-category-badge">Website Basics</span>
                 <span class="blog-read-time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                   7 min read
                 </span>
               </div>
+              <span class="blog-date">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Published: 20 Jul 2026
+              </span>
               <h3 class="blog-title">Local Business Website Cost in Maharashtra 2026 — Real Price Breakdown</h3>
               <p class="blog-excerpt">Transparent look at what a good local business website actually costs in Kolhapur, Pune and nearby cities. No hidden charges.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Website Cost Breakdown">
-                  Read Guide & Consult
+                <a href="blog/basics-pricing.html" class="btn btn-primary btn-sm blog-read-btn">
+                  Read Full Guide
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Article 5: SEO & Speed -->
-          <article id="blog-seo" class="blog-card" data-category="seo">
+          <!-- Article 5: Speed (More Customers Online) -->
+          <!--
+            BLOG COVER IMAGE — generate in ChatGPT/DALL-E and upload as: images/blog/more-customers-speed.jpg
+            Recommended size: 600 x 340 px (16:9), JPG or WEBP, under 150KB
+            Once uploaded, replace the <div class="blueprint-placeholder">...</div> block below with:
+            <img src="images/blog/more-customers-speed.jpg" alt="Mobile phone showing a slow loading website" width="600" height="340" loading="lazy">
+          -->
+          <article id="blog-more-customers-speed" class="blog-card" data-category="more-customers">
             <div class="blog-img-box">
               <div class="blueprint-placeholder" data-placeholder-id="blog-5">
                 <div class="placeholder-corner corner-tl"></div>
@@ -1453,25 +1504,35 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Local SEO & Speed</span>
+                <span class="blog-category-badge">More Customers Online</span>
                 <span class="blog-read-time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                   6 min read
                 </span>
               </div>
+              <span class="blog-date">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Published: 14 Jul 2026
+              </span>
               <h3 class="blog-title">Why Your Current Website Is Slow on Mobile (And How It Is Costing You Customers)</h3>
               <p class="blog-excerpt">Most local business websites take 4–6 seconds to load on mobile. Learn what a sub-1.2s website can do for ranking and inquiries.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Speed & Mobile Audit">
-                  Read Guide & Consult
+                <a href="blog/more-customers-speed.html" class="btn btn-primary btn-sm blog-read-btn">
+                  Read Full Guide
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Article 6: Google Business Profile & SEO -->
-          <article id="blog-gbp-seo" class="blog-card" data-category="seo">
+          <!-- Article 6: Google Business Profile & SEO (More Customers Online) -->
+          <!--
+            BLOG COVER IMAGE — generate in ChatGPT/DALL-E and upload as: images/blog/more-customers-gbp.jpg
+            Recommended size: 600 x 340 px (16:9), JPG or WEBP, under 150KB
+            Once uploaded, replace the <div class="blueprint-placeholder">...</div> block below with:
+            <img src="images/blog/more-customers-gbp.jpg" alt="Google Maps pin showing a local business listing" width="600" height="340" loading="lazy">
+          -->
+          <article id="blog-more-customers-gbp" class="blog-card" data-category="more-customers">
             <div class="blog-img-box">
               <div class="blueprint-placeholder" data-placeholder-id="blog-6">
                 <div class="placeholder-corner corner-tl"></div>
@@ -1485,19 +1546,65 @@
             </div>
             <div class="blog-content">
               <div class="blog-meta-top">
-                <span class="blog-category-badge">Local SEO & Speed</span>
+                <span class="blog-category-badge">More Customers Online</span>
                 <span class="blog-read-time">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                   5 min read
                 </span>
               </div>
+              <span class="blog-date">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Published: 8 Jul 2026
+              </span>
               <h3 class="blog-title">Google Business Profile + Website — The Combination That Ranks Local Businesses Higher</h3>
               <p class="blog-excerpt">How connecting a fast website with an optimised Google Business Profile helps clinics, coaching classes and shops appear higher on Google Maps.</p>
               <div class="blog-footer-action">
-                <button type="button" class="btn btn-primary btn-sm blog-read-btn" data-open-modal data-package-name="Consultation: Google Business Profile + SEO">
-                  Read Guide & Consult
+                <a href="blog/more-customers-gbp.html" class="btn btn-primary btn-sm blog-read-btn">
+                  Read Full Guide
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </button>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 7: Client Success Story (NEW — added for the Client Success Stories category) -->
+          <!--
+            BLOG COVER IMAGE — generate in ChatGPT/DALL-E and upload as: images/blog/success-apex-academy.jpg
+            Recommended size: 600 x 340 px (16:9), JPG or WEBP, under 150KB
+            Once uploaded, replace the <div class="blueprint-placeholder">...</div> block below with:
+            <img src="images/blog/success-apex-academy.jpg" alt="Coaching institute admission funnel success story" width="600" height="340" loading="lazy">
+          -->
+          <article id="blog-success-apex" class="blog-card" data-category="success-stories">
+            <div class="blog-img-box">
+              <div class="blueprint-placeholder" data-placeholder-id="blog-7">
+                <div class="placeholder-corner corner-tl"></div>
+                <div class="placeholder-corner corner-tr"></div>
+                <div class="placeholder-corner corner-bl"></div>
+                <div class="placeholder-corner corner-br"></div>
+                <span class="placeholder-tag">Success Story</span>
+                <p class="placeholder-text">[PLACEHOLDER: Blog cover — Apex Academy admission success story, 600x340px]</p>
+                <span class="placeholder-dim">600 × 340 px</span>
+              </div>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta-top">
+                <span class="blog-category-badge">Client Success Stories</span>
+                <span class="blog-read-time">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  4 min read
+                </span>
+              </div>
+              <span class="blog-date">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Published: 25 Aug 2026
+              </span>
+              <h3 class="blog-title">How Apex Academy Got 310% More Admission Calls in 30 Days With a New Website</h3>
+              <p class="blog-excerpt">A real look at how a simple admission funnel — course pages, faculty profiles and WhatsApp enrollment routing — turned Apex Academy's website into their busiest enrollment channel.</p>
+              <div class="blog-footer-action">
+                <a href="blog/success-apex-academy.html" class="btn btn-primary btn-sm blog-read-btn">
+                  Read Full Guide
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
               </div>
             </div>
           </article>

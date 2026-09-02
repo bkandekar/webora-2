@@ -2025,6 +2025,179 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   14.6 FULL BLOG ARTICLE PAGE LAYOUT (blog/*.html)
+   -------------------------------------------------------------------------- */
+.article-header {
+  padding: 3rem 0 2.5rem 0;
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.article-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.article-breadcrumb a {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.article-breadcrumb a:hover {
+  color: var(--color-cyan-primary);
+}
+
+.article-headline {
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+  max-width: 820px;
+  margin-bottom: 1rem;
+}
+
+.article-summary {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin-bottom: 1.5rem;
+}
+
+.article-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.article-meta-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.article-meta-row svg {
+  color: var(--color-gold-primary);
+  flex-shrink: 0;
+}
+
+.article-featured-image .blueprint-placeholder {
+  min-height: 260px;
+  border-radius: var(--radius-lg);
+}
+
+.article-body-section {
+  padding: 3.5rem 0;
+  background-color: var(--color-bg-white);
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.article-toc {
+  position: sticky;
+  top: 100px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.article-toc h4 {
+  font-size: 0.95rem;
+  color: var(--color-navy-primary);
+  margin-bottom: 0.9rem;
+}
+
+.article-toc ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.article-toc a {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  transition: color var(--transition-fast);
+}
+
+.article-toc a:hover {
+  color: var(--color-cyan-primary);
+}
+
+.article-content {
+  max-width: 68ch;
+}
+
+.article-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2.25rem;
+  margin-bottom: 0.9rem;
+  scroll-margin-top: 100px;
+}
+
+.article-content h2:first-child {
+  margin-top: 0;
+}
+
+.article-content p {
+  font-size: 1rem;
+  color: var(--color-text-body);
+  line-height: 1.75;
+  margin-bottom: 1.1rem;
+}
+
+.article-cta-box {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: var(--color-navy-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-navy-border);
+  text-align: center;
+}
+
+.article-cta-box h3 {
+  color: var(--color-text-light);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-cta-box p {
+  color: var(--color-text-light-muted);
+  margin-bottom: 1.25rem;
+}
+
+.article-related-section {
+  padding: 4rem 0 5rem 0;
+  background-color: var(--color-bg-alt);
+}
+
+@media (max-width: 900px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+  .article-toc {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .article-headline {
+    font-size: 1.6rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
    15. FINAL CTA BANNER
    -------------------------------------------------------------------------- */
 .cta-banner-section {
