@@ -927,6 +927,7 @@ const BLOG_POSTS = {
     </div>
 
     <h3 id="p9-why">Why WhatsApp Enquiries Matter for Local Businesses</h3>
+   <p><img src="images/blog-9-inside.webp" alt="WhatsApp button on website" style="width:100%;border-radius:12px;margin:1rem 0;" loading="lazy"></p>
     <p>In cities like Kolhapur, Pune, Sangli and Satara, most customers no longer prefer to call first. They open a website, look for a clear way to contact the business, and send a WhatsApp message. This feels easier, faster and less formal than a phone call.</p>
     <p>For coaching institutes, clinics, beauty parlours, restaurants and local shops, WhatsApp has become the main enquiry channel. If your website does not make it simple to start a chat, many serious buyers leave without contacting you. A clean website with a strong WhatsApp system can easily increase daily enquiries within a few weeks.</p>
     <p>Businesses that treat WhatsApp as their primary lead channel usually reply faster, convert more visitors and build better customer relationships. The goal is not just traffic. The goal is messages from real people who need your service.</p>
