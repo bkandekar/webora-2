@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initPortfolioFilters();
   initEnquiryModal();
   initSmoothScroll();
+  initBlogArticleModal();
 });
 
 /* ----------------------------------------------------------------------------
@@ -690,5 +691,291 @@ function initSmoothScroll() {
         });
       }
     });
+  });
+}
+
+
+/* ----------------------------------------------------------------------------
+   9. FULL BLOG ARTICLE MODAL + POSTS CONTENT
+   ---------------------------------------------------------------------------- */
+const BLOG_POSTS = {
+  1: {
+    title: "How Local Businesses Get More WhatsApp Enquiries with a Simple Website",
+    category: "More Customers Online",
+    date: "18 August 2026",
+    dateISO: "2026-08-18",
+    readTime: "5 min read",
+    content: `
+      <div class="blog-toc"><div class="blog-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#p1-why">Why WhatsApp Enquiries Matter</a></li>
+        <li><a href="#p1-how">How a Website Increases WhatsApp Messages</a></li>
+        <li><a href="#p1-tips">Simple Tips That Work</a></li>
+        <li><a href="#p1-takeaway">Key Takeaway</a></li>
+      </ol></div>
+      <h3 id="p1-why">Why WhatsApp Enquiries Matter</h3>
+      <p>Most customers in Maharashtra now prefer sending a WhatsApp message instead of calling. If your website does not have a clear WhatsApp button, you are losing many potential customers every day.</p>
+      <h3 id="p1-how">How a Website Increases WhatsApp Messages</h3>
+      <p>When someone opens your website, the first thing they look for is an easy way to contact you. A big, visible WhatsApp button on every page makes it simple to start a chat.</p>
+      <h3 id="p1-tips">Simple Tips That Work</h3>
+      <ul>
+        <li>Put WhatsApp button on Home, Service and Contact pages</li>
+        <li>Use a pre-filled message</li>
+        <li>Make the button sticky on mobile</li>
+        <li>Reply quickly</li>
+      </ul>
+      <div class="blog-key-takeaways" id="p1-takeaway"><h3>Key Takeaway</h3>
+      <p>A clean website + clear WhatsApp button is one of the fastest ways to get more daily enquiries.</p></div>`
+  },
+  2: {
+    title: "Why Your Website Is Not Getting Calls (And How to Fix It Fast)",
+    category: "More Customers Online",
+    date: "10 August 2026",
+    dateISO: "2026-08-10",
+    readTime: "6 min read",
+    content: `
+      <div class="blog-toc"><div class="blog-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#p2-reasons">Main Reasons Visitors Don't Call</a></li>
+        <li><a href="#p2-fix">What You Can Fix Quickly</a></li>
+        <li><a href="#p2-takeaway">Key Takeaway</a></li>
+      </ol></div>
+      <h3 id="p2-reasons">Main Reasons Visitors Don't Call</h3>
+      <ul>
+        <li>Phone number is not clearly visible</li>
+        <li>Website is slow on mobile</li>
+        <li>No clear Call Now or WhatsApp button</li>
+        <li>Missing price, services or location</li>
+      </ul>
+      <h3 id="p2-fix">What You Can Fix Quickly</h3>
+      <p>Make phone and WhatsApp large and visible. Add real photos, Google reviews and exact location. Ensure fast mobile loading.</p>
+      <div class="blog-key-takeaways" id="p2-takeaway"><h3>Key Takeaway</h3>
+      <p>Small fixes often increase calls within a few days.</p></div>`
+  },
+  3: {
+    title: "Coaching Institute Website That Brings More Student Admissions",
+    category: "Industry Spotlights",
+    date: "05 August 2026",
+    dateISO: "2026-08-05",
+    readTime: "6 min read",
+    content: `
+      <div class="blog-toc"><div class="blog-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#p3-need">What Parents Look For</a></li>
+        <li><a href="#p3-pages">Important Pages</a></li>
+        <li><a href="#p3-takeaway">Key Takeaway</a></li>
+      </ol></div>
+      <h3 id="p3-need">What Parents Look For</h3>
+      <p>Parents check course details, faculty, results and fees before calling. If this is missing on a website, they contact another coaching class.</p>
+      <h3 id="p3-pages">Important Pages</h3>
+      <ul>
+        <li>Courses / Batches</li>
+        <li>Faculty profiles</li>
+        <li>Results & Toppers</li>
+        <li>Fee enquiry form</li>
+        <li>WhatsApp admission button</li>
+        <li>Google Maps</li>
+      </ul>
+      <div class="blog-key-takeaways" id="p3-takeaway"><h3>Key Takeaway</h3>
+      <p>A clear coaching website brings more serious admission enquiries.</p></div>`
+  },
+  4: {
+    title: "Beauty Parlour & Salon Website Ideas That Get More Appointments",
+    category: "Industry Spotlights",
+    date: "28 July 2026",
+    dateISO: "2026-07-28",
+    readTime: "5 min read",
+    content: `
+      <div class="blog-toc"><div class="blog-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#p4-why">Why Salons Need a Website</a></li>
+        <li><a href="#p4-features">Features That Bring Appointments</a></li>
+        <li><a href="#p4-takeaway">Key Takeaway</a></li>
+      </ol></div>
+      <h3 id="p4-why">Why Salons Need a Website</h3>
+      <p>Depending only on Instagram is risky. A simple website gives direct bookings and your own customer list.</p>
+      <h3 id="p4-features">Features That Bring Appointments</h3>
+      <ul>
+        <li>Service list with prices</li>
+        <li>WhatsApp booking button</li>
+        <li>Before-after photos</li>
+        <li>Google Maps and reviews</li>
+        <li>Mobile-friendly design</li>
+      </ul>
+      <div class="blog-key-takeaways" id="p4-takeaway"><h3>Key Takeaway</h3>
+      <p>Even a basic 5-page website can bring direct appointment messages.</p></div>`
+  },
+  5: {
+    title: "Why Every Local Business Website Needs a WhatsApp Button",
+    category: "Website Basics",
+    date: "20 July 2026",
+    dateISO: "2026-07-20",
+    readTime: "4 min read",
+    content: `
+      <div class="blog-toc"><div class="blog-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#p5-why">Why Customers Prefer WhatsApp</a></li>
+        <li><a href="#p5-how">How to Add It Properly</a></li>
+        <li><a href="#p5-takeaway">Key Takeaway</a></li>
+      </ol></div>
+      <h3 id="p5-why">Why Customers Prefer WhatsApp</h3>
+      <p>Calling feels formal. WhatsApp feels easy. Most local customers first send a message to ask price or availability.</p>
+      <h3 id="p5-how">How to Add It Properly</h3>
+      <ul>
+        <li>Big button on mobile</li>
+        <li>On all important pages</li>
+        <li>Pre-filled message</li>
+        <li>Fast replies</li>
+      </ul>
+      <div class="blog-key-takeaways" id="p5-takeaway"><h3>Key Takeaway</h3>
+      <p>WhatsApp button is one of the highest converting features for local business websites.</p></div>`
+  },
+  6: {
+    title: "Google Maps on Your Website — Simple Way to Get More Walk-ins",
+    category: "Website Basics",
+    date: "12 July 2026",
+    dateISO: "2026-07-12",
+    readTime: "4 min read",
+    content: `
+      <div class="blog-toc"><div class="blog-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#p6-why">Why Location Matters</a></li>
+        <li><a href="#p6-how">How to Show It Correctly</a></li>
+        <li><a href="#p6-takeaway">Key Takeaway</a></li>
+      </ol></div>
+      <h3 id="p6-why">Why Location Matters</h3>
+      <p>Many customers visit only after they see exact location. If the map is missing, they choose another business.</p>
+      <h3 id="p6-how">How to Show It Correctly</h3>
+      <ul>
+        <li>Embed Google Map on Contact page</li>
+        <li>Write full address</li>
+        <li>Same Name, Address, Phone as Google Business Profile</li>
+        <li>Add Get Directions button</li>
+      </ul>
+      <div class="blog-key-takeaways" id="p6-takeaway"><h3>Key Takeaway</h3>
+      <p>Correct Maps on website + Google Business Profile helps more walk-ins.</p></div>`
+  },
+  7: {
+    title: "How a Coaching Class in Kolhapur Got 40+ Admission Enquiries in 30 Days",
+    category: "Client Success Stories",
+    date: "22 August 2026",
+    dateISO: "2026-08-22",
+    readTime: "5 min read",
+    content: `
+      <div class="blog-toc"><div class="blog-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#p7-before">Before</a></li>
+        <li><a href="#p7-what">What Changed</a></li>
+        <li><a href="#p7-result">Result</a></li>
+        <li><a href="#p7-takeaway">Key Takeaway</a></li>
+      </ol></div>
+      <h3 id="p7-before">Before</h3>
+      <p>A coaching institute in Kolhapur got enquiries only through word of mouth and Instagram. No proper website.</p>
+      <h3 id="p7-what">What Changed</h3>
+      <p>Clean website with course pages, faculty, results and WhatsApp admission button. Fast on mobile.</p>
+      <h3 id="p7-result">Result</h3>
+      <p>In 30 days, more than 40 serious admission enquiries came directly from the website.</p>
+      <div class="blog-key-takeaways" id="p7-takeaway"><h3>Key Takeaway</h3>
+      <p>Clear information + easy contact = more admissions.</p></div>`
+  },
+  8: {
+    title: "Clinic Website That Started Getting Online Appointments Within 2 Weeks",
+    category: "Client Success Stories",
+    date: "08 August 2026",
+    dateISO: "2026-08-08",
+    readTime: "5 min read",
+    content: `
+      <div class="blog-toc"><div class="blog-toc-title">Table of Contents</div>
+      <ol>
+        <li><a href="#p8-before">Before</a></li>
+        <li><a href="#p8-changes">What Improved</a></li>
+        <li><a href="#p8-result">After</a></li>
+        <li><a href="#p8-takeaway">Key Takeaway</a></li>
+      </ol></div>
+      <h3 id="p8-before">Before</h3>
+      <p>Old slow website, no clear appointment option. Patients called only through referrals.</p>
+      <h3 id="p8-changes">What Improved</h3>
+      <ul>
+        <li>Fast mobile design</li>
+        <li>Call and WhatsApp buttons</li>
+        <li>Appointment form</li>
+        <li>Google Maps and reviews</li>
+      </ul>
+      <h3 id="p8-result">After</h3>
+      <p>Within 2 weeks, appointment messages started coming directly from the website.</p>
+      <div class="blog-key-takeaways" id="p8-takeaway"><h3>Key Takeaway</h3>
+      <p>Fast website + easy booking = more online appointments.</p></div>`
+  }
+};
+
+function initBlogArticleModal() {
+  const modal = document.getElementById("blogModal");
+  const modalContent = document.getElementById("blogModalContent");
+  const closeBtn = document.getElementById("blogModalClose");
+  if (!modal || !modalContent) {
+    console.warn("Blog modal #blogModal not found in HTML");
+    return;
+  }
+
+  document.querySelectorAll("[data-blog]").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const id = btn.getAttribute("data-blog");
+      const post = BLOG_POSTS[id];
+      if (!post) {
+        console.warn("No blog post for id:", id);
+        return;
+      }
+
+      modalContent.innerHTML = `
+        <div class="blog-modal-body">
+          <span class="blog-category-badge">${post.category}</span>
+          <h2 id="blogModalTitle">${post.title}</h2>
+          <div class="blog-modal-meta">
+            <time datetime="${post.dateISO}">${post.date}</time> • ${post.readTime}
+          </div>
+          ${post.content}
+          <div class="blog-modal-cta">
+            <button type="button" class="btn btn-gold" data-open-modal data-package-name="Blog: ${post.title}">Get Free Quote</button>
+          </div>
+        </div>`;
+
+      modalContent.querySelectorAll(".blog-toc a").forEach(link => {
+        link.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          const target = modalContent.querySelector(link.getAttribute("href"));
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      modalContent.querySelectorAll("[data-open-modal]").forEach(b => {
+        b.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          closeBlogModal();
+          if (typeof openEnquiryModal === "function") {
+            openEnquiryModal({ packageName: b.getAttribute("data-package-name") || "Website Consultation" });
+          }
+        });
+      });
+
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function closeBlogModal() {
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (closeBtn) closeBtn.addEventListener("click", closeBlogModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeBlogModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) closeBlogModal();
   });
 }
