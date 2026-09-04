@@ -15,7 +15,7 @@ const BUSINESS_CONFIG = {
   ownerName: "Balu Kandekar",
   phone: "9067257872",
   phoneDisplay: "+91 9067257872",
-  whatsapp: "919067257872", // Country code 91 + phone number without + or spaces
+  whatsapp: "918329931123", // Country code 91 + phone number without + or spaces
   email: "kandekarbalu8314@gmail.com",
   address: "Kolhapur, Maharashtra, India",
   serviceArea: "Kolhapur, Pune, Sangli, Satara & across Maharashtra",
