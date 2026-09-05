@@ -1102,6 +1102,129 @@
             </div>
           </div>
         </div>
+        <!-- Explore More Button -->
+        <div class="text-center mt-4 mb-4" id="exploreMoreWrapper">
+          <button type="button" class="btn btn-primary btn-lg" id="exploreMoreBtn">
+            Explore More Projects →
+          </button>
+        </div>
+
+        <!-- Hidden Extra Projects (Initially Hidden) -->
+        <div class="portfolio-grid extra-projects" id="extraProjects">
+
+          <!-- Project 7: Beauty Parlor -->
+          <div class="portfolio-card" data-category="beauty">
+            <div class="portfolio-img-box">
+              <img
+                src="images/glow-beauty-parlor.webp"
+                alt="Glow Beauty Parlor Website Design"
+                width="800"
+                height="600"
+                loading="lazy"
+                class="portfolio-img"
+              >
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Beauty Parlor Website</span>
+              <h3 class="portfolio-title">Glow Beauty Parlor</h3>
+              <p class="portfolio-desc">Online appointment booking, service packages, bridal makeup gallery आणि WhatsApp enquiry system.</p>
+              <div class="portfolio-metric-badge">
+                <span>✨ 300+ Bookings / Month</span>
+              </div>
+              <div class="portfolio-actions-row">
+                <a href="#contact" class="btn btn-secondary btn-sm" data-open-modal data-package-name="Similar to Glow Beauty Parlor">View Live Demo</a>
+                <button type="button" class="btn btn-primary btn-sm portfolio-cta" data-open-modal data-package-name="Similar to Glow Beauty Parlor">
+                  Enquire Similar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8: Salon -->
+          <div class="portfolio-card" data-category="salon">
+            <div class="portfolio-img-box">
+              <img
+                src="images/style-hub-salon.webp"
+                alt="Style Hub Unisex Salon Website"
+                width="800"
+                height="600"
+                loading="lazy"
+                class="portfolio-img"
+              >
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Salon / Unisex Salon Website</span>
+              <h3 class="portfolio-title">Style Hub Unisex Salon</h3>
+              <p class="portfolio-desc">Hair & grooming packages, online slot booking, before-after gallery आणि loyalty membership system.</p>
+              <div class="portfolio-metric-badge">
+                <span>💇 4.8★ Google Rating</span>
+              </div>
+              <div class="portfolio-actions-row">
+                <a href="#contact" class="btn btn-secondary btn-sm" data-open-modal data-package-name="Similar to Style Hub Salon">View Live Demo</a>
+                <button type="button" class="btn btn-primary btn-sm portfolio-cta" data-open-modal data-package-name="Similar to Style Hub Salon">
+                  Enquire Similar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 9: Pest Control -->
+          <div class="portfolio-card" data-category="pestcontrol">
+            <div class="portfolio-img-box">
+              <img
+                src="images/safehome-pest-control.webp"
+                alt="SafeHome Pest Control Service Website"
+                width="800"
+                height="600"
+                loading="lazy"
+                class="portfolio-img"
+              >
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Pest Control Service Website</span>
+              <h3 class="portfolio-title">SafeHome Pest Control</h3>
+              <p class="portfolio-desc">Service area coverage, instant quote form, before-after results आणि emergency call button.</p>
+              <div class="portfolio-metric-badge">
+                <span>🛡️ 1200+ Homes Protected</span>
+              </div>
+              <div class="portfolio-actions-row">
+                <a href="#contact" class="btn btn-secondary btn-sm" data-open-modal data-package-name="Similar to SafeHome Pest Control">View Live Demo</a>
+                <button type="button" class="btn btn-primary btn-sm portfolio-cta" data-open-modal data-package-name="Similar to SafeHome Pest Control">
+                  Enquire Similar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 10: Gym -->
+          <div class="portfolio-card" data-category="gym">
+            <div class="portfolio-img-box">
+              <img
+                src="images/iron-fit-gym.webp"
+                alt="IronFit Gym & Fitness Center Website"
+                width="800"
+                height="600"
+                loading="lazy"
+                class="portfolio-img"
+              >
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Gym & Fitness Website</span>
+              <h3 class="portfolio-title">IronFit Gym & Fitness</h3>
+              <p class="portfolio-desc">Membership plans, online class schedule, trainer profiles आणि free trial registration form.</p>
+              <div class="portfolio-metric-badge">
+                <span>💪 850+ Active Members</span>
+              </div>
+              <div class="portfolio-actions-row">
+                <a href="#contact" class="btn btn-secondary btn-sm" data-open-modal data-package-name="Similar to IronFit Gym">View Live Demo</a>
+                <button type="button" class="btn btn-primary btn-sm portfolio-cta" data-open-modal data-package-name="Similar to IronFit Gym">
+                  Enquire Similar
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- extraProjects end -->
       </div>
     </section>
           
@@ -1820,6 +1943,22 @@
     <div id="blogModalContent"></div>
   </div>
 </div>
+  <script>
+  document.getElementById('exploreMoreBtn').addEventListener('click', function () {
+    const extraProjects = document.getElementById('extraProjects');
+    const wrapper = document.getElementById('exploreMoreWrapper');
+
+    extraProjects.style.display = 'grid';
+    extraProjects.offsetHeight; // reflow for animation
+    extraProjects.classList.add('show');
+
+    wrapper.style.display = 'none';
+
+    setTimeout(() => {
+      extraProjects.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  });
+</script>
 </body>
 </html>
 
