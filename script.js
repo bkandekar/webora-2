@@ -92,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initPortfolioFilters,
     initEnquiryModal,
     initSmoothScroll,
-    initBlogArticleModal
+    initBlogArticleModal,
+    initContactFormWhatsApp,
+    initFooterYear
   ].forEach((fn) => {
     try {
       fn();
@@ -1091,3 +1093,90 @@ document.addEventListener("click", function (e) {
     openEnquiryModal({ packageName: packageName });
   }
 });
+
+/* ----------------------------------------------------------------------------
+   11. CONTACT FORM -> WHATSAPP REDIRECT (Footer Section Contact Form)
+   Collects name, phone, business name and message from the #contactForm
+   (added in the new Contact section) and forwards them as a pre-filled
+   WhatsApp message to BUSINESS_CONFIG.whatsapp — no backend required.
+   ---------------------------------------------------------------------------- */
+function initContactFormWhatsApp() {
+  const contactForm = document.getElementById("contactForm");
+  if (!contactForm) return;
+
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nameField = contactForm.querySelector('[name="name"]');
+    const phoneField = contactForm.querySelector('[name="phone"]');
+    const businessField = contactForm.querySelector('[name="business"]');
+    const messageField = contactForm.querySelector('[name="message"]');
+
+    const name = nameField ? nameField.value.trim() : "";
+    const phone = phoneField ? phoneField.value.trim() : "";
+    const business = businessField ? businessField.value.trim() : "";
+    const message = messageField ? messageField.value.trim() : "";
+
+    // Basic validation (matches the style used in handleFormSubmission above)
+    if (!name) {
+      alert("कृपया तुमचे नाव भरा.");
+      if (nameField) nameField.focus();
+      return;
+    }
+    if (!phone || phone.replace(/\D/g, "").length < 10) {
+      alert("कृपया योग्य फोन नंबर भरा (किमान 10 अंक).");
+      if (phoneField) phoneField.focus();
+      return;
+    }
+
+    // Build the structured WhatsApp message
+    let waText =
+      `*NEW WEBSITE ENQUIRY - WEBORA (Contact Form)*\n` +
+      `--------------------------------\n` +
+      `👤 *Name:* ${name}\n` +
+      `📞 *Phone:* ${phone}\n`;
+    if (business) waText += `🏢 *Business Name:* ${business}\n`;
+    if (message) waText += `📝 *Message:* ${message}\n`;
+    waText += `--------------------------------\n_Sent via Webora Contact Section_`;
+
+    const whatsappURL = `https://wa.me/${BUSINESS_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+
+    // Show on-page success feedback + reset the form
+    showContactFormSuccess(contactForm);
+    contactForm.reset();
+  });
+}
+
+function showContactFormSuccess(formElement) {
+  const existingMsg = document.getElementById("formSuccessMsg");
+  if (existingMsg) existingMsg.remove();
+
+  const msg = document.createElement("div");
+  msg.id = "formSuccessMsg";
+  msg.className = "form-success-message";
+  msg.innerHTML = `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>WhatsApp उघडले आहे! कृपया मेसेज पाठवा — आम्ही 2 तासात रिप्लाय करू.</span>
+  `;
+  formElement.after(msg);
+
+  setTimeout(() => {
+    msg.style.opacity = "0";
+    setTimeout(() => msg.remove(), 300);
+  }, 6000);
+}
+
+/* ----------------------------------------------------------------------------
+   12. FOOTER YEAR AUTO-UPDATE
+   Keeps the copyright year in the footer always current without manual edits.
+   ---------------------------------------------------------------------------- */
+function initFooterYear() {
+  const footerYear = document.getElementById("footerYear");
+  if (!footerYear) return;
+  footerYear.textContent = new Date().getFullYear();
+}
