@@ -94,7 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initSmoothScroll,
     initBlogArticleModal,
     initContactFormWhatsApp,
-    initFooterYear
+    initFooterYear,
+    initExploreMoreProjects
   ].forEach((fn) => {
     try {
       fn();
@@ -114,7 +115,7 @@ function initDynamicContactLinks() {
   whatsappElements.forEach(el => {
     const customMessage = el.getAttribute("data-wa-msg") ||
       encodeURIComponent(`Hello ${BUSINESS_CONFIG.businessName}! I am interested in building a high-converting website for my business.`);
-    el.href = `https://wa.me/${BUSINESS_CONFIG.whatsapp}?text=${customMessage}`;
+    el.href = `https://wa.me/\( {BUSINESS_CONFIG.whatsapp}?text= \){customMessage}`;
   });
 
   // Update Phone call links
@@ -403,7 +404,7 @@ function initCostCalculator() {
       summaryPages.textContent = `${selectedPages} Pages`;
     }
     if (summaryFeatures) {
-      summaryFeatures.textContent = `${selectedFeatureCount} Selected (+${formatINR(featuresTotal)})`;
+      summaryFeatures.textContent = `\( {selectedFeatureCount} Selected (+ \){formatINR(featuresTotal)})`;
     }
     if (summaryTimeline) {
       summaryTimeline.textContent = selectedTimeline === "fast" ? "Fast Track (7-10 Days)" : "Standard (15-20 Days)";
@@ -435,7 +436,7 @@ function initCostCalculator() {
       const features = calcForm.dataset.features || "All selected features";
 
       openEnquiryModal({
-        packageName: `Calculator Quote: ${type} (${range})`,
+        packageName: `Calculator Quote: \( {type} ( \){range})`,
         timeline: timeline,
         notes: `Selected Features: ${features}`
       });
@@ -657,7 +658,7 @@ function handleFormSubmission(e) {
     `--------------------------------\n` +
     `_Sent via Webora Website Lead Engine_`;
 
-  const waUrl = `https://wa.me/${BUSINESS_CONFIG.whatsapp}?text=${encodeURIComponent(waMessage)}`;
+  const waUrl = `https://wa.me/\( {BUSINESS_CONFIG.whatsapp}?text= \){encodeURIComponent(waMessage)}`;
 
   // Provide immediate UI feedback
   const feedbackBox = document.getElementById("modalStatusFeedback");
@@ -952,7 +953,7 @@ const BLOG_POSTS = {
         <li>No pre-filled message, so the customer does not know what to write</li>
         <li>Slow loading on mobile (3–6 seconds), which makes people leave before they can contact you</li>
         <li>Generic “Contact Us” forms that ask for too much information</li>
-        <li>No clear service or price information, so the visitor is not ready to message</li>
+        <li>Missing service or price information, so the visitor is not ready to message</li>
         <li>WhatsApp number not linked correctly, or opening the wrong chat</li>
       </ul>
       <p>When these issues are fixed together, enquiry volume usually rises quickly because the path from “interest” to “message” becomes short and clear.</p>
@@ -1027,7 +1028,7 @@ function initBlogArticleModal() {
           <span class="blog-category-badge">${post.category}</span>
           <h2 id="blogModalTitle">${post.title}</h2>
           <div class="blog-modal-meta">
-            <time datetime="${post.dateISO}">${post.date}</time> • ${post.readTime}
+            <time datetime="\( {post.dateISO}"> \){post.date}</time> • ${post.readTime}
           </div>
           ${post.content}
           <div class="blog-modal-cta">
@@ -1139,7 +1140,7 @@ function initContactFormWhatsApp() {
     if (message) waText += `📝 *Message:* ${message}\n`;
     waText += `--------------------------------\n_Sent via Webora Contact Section_`;
 
-    const whatsappURL = `https://wa.me/${BUSINESS_CONFIG.whatsapp}?text=${encodeURIComponent(waText)}`;
+    const whatsappURL = `https://wa.me/\( {BUSINESS_CONFIG.whatsapp}?text= \){encodeURIComponent(waText)}`;
 
     // Open WhatsApp in a new tab
     window.open(whatsappURL, "_blank", "noopener,noreferrer");
@@ -1179,4 +1180,24 @@ function initFooterYear() {
   const footerYear = document.getElementById("footerYear");
   if (!footerYear) return;
   footerYear.textContent = new Date().getFullYear();
+}
+
+/* ----------------------------------------------------------------------------
+   13. EXPLORE MORE PROJECTS
+   Shows the extra portfolio cards when the "Explore More Projects" button is clicked
+   ---------------------------------------------------------------------------- */
+function initExploreMoreProjects() {
+  const btn = document.getElementById("exploreMoreBtn");
+  const extra = document.getElementById("extraProjects");
+
+  if (!btn || !extra) return;
+
+  btn.addEventListener("click", () => {
+    extra.classList.add("show");
+    // बटण लपवा (optional)
+    btn.style.display = "none";
+    // किंवा संपूर्ण wrapper लपवायचे असल्यास खालील line uncomment करा:
+    // const wrapper = document.getElementById("exploreMoreWrapper");
+    // if (wrapper) wrapper.style.display = "none";
+  });
 }
